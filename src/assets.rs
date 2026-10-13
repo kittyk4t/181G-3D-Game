@@ -11,7 +11,7 @@ use std::rc::Rc;
 use std::sync::Arc;
 use thunderdome::{Arena, Index};
 use vulkano::image::immutable::ImmutableImage;
-use vulkano::sync::GpuFuture; 
+use vulkano::sync::GpuFuture;
 
 pub struct Texture {
     pub image: Image,
@@ -328,11 +328,11 @@ impl Assets {
                     .unwrap_or_else(|| "BLANK".to_string());
                 match self.materials_by_name.entry(name.clone()) {
                     std::collections::hash_map::Entry::Occupied(e) => {
-                        println!(
-                            "Skip material {:?}, already found {:?}",
-                            (color, name),
-                            self.materials[e.get().0]
-                        );
+                        // println!(
+                        //     "Skip material {:?}, already found {:?}",
+                        //     (color, name),
+                        //     self.materials[e.get().0]
+                        // );
                         *e.get()
                     }
                     std::collections::hash_map::Entry::Vacant(e) => {
